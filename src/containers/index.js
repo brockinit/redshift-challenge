@@ -1,3 +1,4 @@
 import AppContainer from './AppContainer';
+import GalleryContainer from './GalleryContainer';
 
-export { AppContainer };
+export { AppContainer, GalleryContainer };
