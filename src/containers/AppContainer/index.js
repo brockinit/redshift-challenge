@@ -1,6 +1,6 @@
 import Component from 'inferno-component';
 import './AppContainer.css';
-import { NavBar } from '../../components';
+import { NavBar, Footer } from '../../components';
 
 class AppContainer extends Component {
   render() {
@@ -11,6 +11,7 @@ class AppContainer extends Component {
           To get started, edit <code>src/AppContainer.js</code> and save to
           reload.
         </p>
+        <Footer />
       </div>
     );
   }
