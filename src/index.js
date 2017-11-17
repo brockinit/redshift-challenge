@@ -1,5 +1,5 @@
 import { render } from 'inferno';
-import App from './App';
+import { AppContainer } from './containers';
 import './index.css';
 
-render(<App />, document.getElementById('app'));
+render(<AppContainer />, document.getElementById('app'));

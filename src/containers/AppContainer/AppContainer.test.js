@@ -1,7 +1,7 @@
 import { render } from 'inferno';
-import App from './App';
+import AppContainer from './AppContainer';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(<App />, div);
+  render(<AppContainer />, div);
 });
