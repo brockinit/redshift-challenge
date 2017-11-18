@@ -6,7 +6,10 @@
     "inferno": "3.10.1",
     "inferno-component": "3.10.1",
     "inferno-router": "3.10.1",
-    "inferno-scripts": "5.0.0"
+    "inferno-scripts": "5.0.0",
+    "react-redux": "5.0.6",
+    "redux": "3.7.2",
+    "redux-thunk": "2.2.0"
   },
   "scripts": {
     "start": "inferno-scripts start",
