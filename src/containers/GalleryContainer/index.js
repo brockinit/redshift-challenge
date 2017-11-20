@@ -10,6 +10,7 @@ class GalleryContainer extends Component {
 
     this.state = {
       images: [],
+      fetchingImages: false,
     };
   }
 
@@ -25,10 +26,13 @@ class GalleryContainer extends Component {
   }
 
   loadMoreImages() {
+    this.setState({ fetchingImages: true });
     const { incrementPage, fetchImages } = this.props;
 
     incrementPage();
-    fetchImages();
+    fetchImages().then(() => {
+      this.setState({ fetchingImages: false });
+    });
   }
 
   render() {
@@ -39,7 +43,11 @@ class GalleryContainer extends Component {
         </div>
         {this.state.images.length > 0 ? (
           <div className="button-container">
-            <button className="load-more-button" onClick={this.loadMoreImages}>
+            <button
+              disabled={this.state.fetchingImages}
+              className="load-more-button"
+              onClick={this.loadMoreImages}
+            >
               Load more
             </button>
           </div>
