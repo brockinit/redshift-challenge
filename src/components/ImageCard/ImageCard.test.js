@@ -12,7 +12,7 @@ test('ImageCard should be a functional component', () => {
   expect(isFunctional).toBe(true);
 });
 
-test('should have an image prop', () => {
+test('ImageCard should render correctly', () => {
   const shallowRender = renderToSnapshot(<ImageCard />);
   expect(shallowRender).toMatchSnapshot();
 });

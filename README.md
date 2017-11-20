@@ -10,6 +10,9 @@ http://stuffoncats.s3-website-us-west-2.amazonaws.com/
 - `npm install`
 - `npm start`
 
+## Running tests
+- `npm test`
+
 ## Hosting on S3
 -  Create a new bucket
 -  Update the bucket name in the deploy script
