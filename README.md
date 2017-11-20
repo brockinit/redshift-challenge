@@ -7,12 +7,11 @@ http://stuffoncats.s3-website-us-west-2.amazonaws.com/
 ## Getting Started
 -  Ensure that the variables found in `.env.sample` have been set
 -  Switch to Node.js version `>=6.10`
--  `npm install`
+- `npm install`
 - `npm start`
 
-## Running Tests
-- `npm test`
-
-## Deployment
+## Hosting on S3
+-  Create a new bucket
+-  Update the bucket name in the deploy script
 -  Be sure that you have configured your `~/.aws/credentials` file properly
 - `npm run deploy:s3`
