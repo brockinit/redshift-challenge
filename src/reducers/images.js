@@ -1,8 +1,10 @@
 import { fetchService } from '../utils';
+const { IMGUR_API_ENDPOINT } = process.env;
 
 // ACTION TYPES
 export const GET_IMAGES = 'images/GET_IMAGES';
 export const GET_IMAGES_SUCCESS = 'images/GET_IMAGES_SUCCESS';
+export const GET_IMAGES_FAILURE = 'images/GET_IMAGES_FAILURE';
 
 // INITIAL STATE
 const initialState = [];
@@ -17,7 +19,15 @@ export const getImages = () => {
 // ACTIONS
 export const fetchImages = () => {
   return function(dispatch) {
-    // Call API here
+    dispatch(getImages());
+    return fetchService(IMGUR_API_ENDPOINT)
+      .then(images => {
+        return dispatch({ type: GET_IMAGES_SUCCESS, images });
+      })
+      .catch(err => {
+        dispatch(GET_IMAGES_FAILURE);
+        throw err;
+      });
   };
 };
 
