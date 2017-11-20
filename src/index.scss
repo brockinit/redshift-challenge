@@ -2,13 +2,11 @@ $small-width: 425px;
 $medium-width: 750px;
 $large-width: 1024px;
 
-$color-white: #ffffff;
-$color-grey-dark: #4a4a4a;
-$background-color-dark: #4488c6;
+$primary-color: #4488c6;
 $text-color-dark: black;
 $text-color-h2: #68c9ba;
 $text-link: #5db2a6;
-$primary-color: #4488c6;
+$button-color: #fff;
 
 @mixin small {
   @media (min-width: #{$small-width}) {
@@ -37,7 +35,7 @@ $primary-color: #4488c6;
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  background-color: $background-color-dark;
+  background-color: $primary-color;
   opacity: 0.8;
   position: fixed;
   top: 0;
@@ -113,7 +111,7 @@ $primary-color: #4488c6;
 }
 
 .responsive-container {
-  background-color: $background-color-dark;
+  background-color: $primary-color;
   opacity: 0.8;
   position: fixed;
   width: 100%;
@@ -373,12 +371,12 @@ $primary-color: #4488c6;
 }
 
 .load-more-button {
-  background: $background-color-dark;
+  background: $primary-color;
   padding: 1.25rem;
   border: none;
   cursor: pointer;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.12);
-  color: $color-white;
+  color: $button-color;
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;

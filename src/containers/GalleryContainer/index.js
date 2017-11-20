@@ -9,7 +9,7 @@ class GalleryContainer extends Component {
     this.loadMoreImages = this.loadMoreImages.bind(this);
 
     this.state = {
-      images: props.images,
+      images: [],
     };
   }
 
@@ -37,11 +37,13 @@ class GalleryContainer extends Component {
         <div className="grid-area-container">
           {this.state.images.map(image => <ImageCard {...image} />)}
         </div>
-        <div className="button-container">
-          <button className="load-more-button" onClick={this.loadMoreImages}>
-            Load more
-          </button>
-        </div>
+        {this.state.images.length > 0 ? (
+          <div className="button-container">
+            <button className="load-more-button" onClick={this.loadMoreImages}>
+              Load more
+            </button>
+          </div>
+        ) : null}
       </div>
     );
   }
