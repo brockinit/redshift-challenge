@@ -1,5 +1,5 @@
 import { fetchService } from '../utils';
-const { IMGUR_API_ENDPOINT } = process.env;
+const { INFERNO_APP_IMGUR_API_ENDPOINT } = process.env;
 
 // ACTION TYPES
 export const GET_IMAGES = 'images/GET_IMAGES';
@@ -20,12 +20,14 @@ export const getImages = () => {
 export const fetchImages = () => {
   return function(dispatch) {
     dispatch(getImages());
-    return fetchService(IMGUR_API_ENDPOINT)
+    return fetchService(`${INFERNO_APP_IMGUR_API_ENDPOINT}?page=2`)
       .then(images => {
-        return dispatch({ type: GET_IMAGES_SUCCESS, images });
+        // TODO Remove this filter and use actual pagination
+        const filteredImages = images.data.filter((img, i) => i < 10);
+        return dispatch({ type: GET_IMAGES_SUCCESS, images: filteredImages });
       })
       .catch(err => {
-        dispatch(GET_IMAGES_FAILURE);
+        dispatch({ type: GET_IMAGES_FAILURE });
         throw err;
       });
   };
@@ -35,7 +37,7 @@ export const fetchImages = () => {
 function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case GET_IMAGES_SUCCESS:
-      return [...state, action.images];
+      return state.concat(action.images);
     default:
       return state;
   }

@@ -2,5 +2,14 @@ import { render } from 'inferno';
 import { AppContainer } from './containers';
 import './index.css';
 import './registerServiceWorker';
+import { Provider } from 'inferno-redux';
+import configureStore from './store';
 
-render(<AppContainer />, document.getElementById('app'));
+const store = configureStore();
+
+render(
+  <Provider store={store}>
+    <AppContainer />
+  </Provider>,
+  document.getElementById('app')
+);
