@@ -5,3 +5,5 @@
 - `npm start`
 
 ## Deployment
+
+- `npm run deploy:s3`
