@@ -15,6 +15,6 @@ http://stuffoncats.s3-website-us-west-2.amazonaws.com/
 
 ## Hosting on S3
 -  Create a new bucket
--  Update the bucket name in the deploy script
+-  Update the bucket name in the deploy script `s3://YOUR_BUCKET_NAME`
 -  Be sure that you have configured your `~/.aws/credentials` file properly
 - `npm run deploy:s3`
