@@ -33,11 +33,15 @@ class GalleryContainer extends Component {
 
   render() {
     return (
-      <div className="grid-area-container">
-        {this.state.images.map(image => <ImageCard {...image} />)}
-        <button className="load-more-button" onClick={this.loadMoreImages}>
-          Load more
-        </button>
+      <div>
+        <div className="grid-area-container">
+          {this.state.images.map(image => <ImageCard {...image} />)}
+        </div>
+        <div className="button-container">
+          <button className="load-more-button" onClick={this.loadMoreImages}>
+            Load more
+          </button>
+        </div>
       </div>
     );
   }

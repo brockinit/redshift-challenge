@@ -4,7 +4,9 @@ const ImageCard = props => {
       <div
         className="grid-image-block"
         style={{ backgroundImage: `url(${props.link})` }}
-      />
+      >
+        <div className="grid-hover" />
+      </div>
     </div>
   );
 };
