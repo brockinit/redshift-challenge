@@ -1,7 +1,10 @@
 const ImageCard = props => {
   return (
-    <div>
-      <img width="150px" height="150px" src={props.link} />
+    <div className="grid-container-outer">
+      <div
+        className="grid-image-block"
+        style={{ backgroundImage: `url(${props.link})` }}
+      />
     </div>
   );
 };

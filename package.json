@@ -13,9 +13,15 @@
     "redux-thunk": "2.2.0"
   },
   "scripts": {
-    "start": "inferno-scripts start",
+    "start": "inferno-scripts start | npm run watch-css",
     "build": "inferno-scripts build",
     "test": "inferno-scripts test --env=jsdom",
-    "eject": "inferno-scripts eject"
+    "eject": "inferno-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css":
+      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+  },
+  "devDependencies": {
+    "node-sass-chokidar": "0.0.3"
   }
 }

@@ -6,7 +6,7 @@ import { NavBar, Footer } from '../../components';
 class AppContainer extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="gallery-container outer">
         <NavBar />
         <GalleryContainer />
         <Footer />

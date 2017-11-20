@@ -1,28 +1,43 @@
 import Component from 'inferno-component';
 import { connect } from 'inferno-redux';
 import { ImageCard } from '../../components';
-import { fetchImages } from '../../reducers/images';
+import { fetchImages, incrementPage } from '../../reducers/images';
 
 class GalleryContainer extends Component {
   constructor(props) {
     super(props);
-
     this.loadMoreImages = this.loadMoreImages.bind(this);
+
+    this.state = {
+      images: props.images,
+    };
   }
 
   componentDidMount() {
-    this.props.fetchImages();
+    const { fetchImages, currentPage } = this.props;
+    fetchImages(currentPage);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.images !== this.props.images) {
+      return this.setState({ images: nextProps.images });
+    }
   }
 
   loadMoreImages() {
-    this.props.fetchImages();
+    const { incrementPage, fetchImages } = this.props;
+
+    incrementPage();
+    fetchImages();
   }
 
   render() {
     return (
-      <div className="gallery-container outer">
-        {this.props.images.map(image => <ImageCard {...image} />)}
-        <button onClick={this.loadMoreImages}>Load more</button>
+      <div className="grid-area-container">
+        {this.state.images.map(image => <ImageCard {...image} />)}
+        <button className="load-more-button" onClick={this.loadMoreImages}>
+          Load more
+        </button>
       </div>
     );
   }
@@ -31,8 +46,11 @@ class GalleryContainer extends Component {
 function mapStateToProps(state) {
   return {
     ...state,
-    images: state.images,
+    images: state.images.items,
   };
 }
 
-export default connect(mapStateToProps, { fetchImages })(GalleryContainer);
+export default connect(mapStateToProps, {
+  fetchImages,
+  incrementPage,
+})(GalleryContainer);

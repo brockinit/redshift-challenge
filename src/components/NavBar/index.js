@@ -31,7 +31,7 @@ class NavBar extends Component {
       <div className={this.state.navClass}>
         <div className="name-container">
           <Link to="/" onClick={this.collapseNav}>
-            <p>Image Gallery</p>
+            <p>Cats n Stuff</p>
           </Link>
         </div>
         <div className="menu-item-container">
