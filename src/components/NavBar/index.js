@@ -5,7 +5,6 @@ import { Link } from 'inferno-router';
 class NavBar extends Component {
   constructor(props) {
     super(props);
-
     this.handleClick = this.handleClick.bind(this);
     this.collapseNav = this.collapseNav.bind(this);
 
@@ -43,12 +42,7 @@ class NavBar extends Component {
         </div>
         <div className="hamburger">
           <div onClick={this.handleClick}>
-            <img
-              src={HamburgerSVG}
-              alt="About"
-              width="40px"
-              onClick={this.handleClick}
-            />
+            <img src={HamburgerSVG} alt="About" width="40px" />
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@
     "inferno-router": "3.10.1",
     "inferno-scripts": "5.0.0",
     "inferno-virtualized": "8.7.1",
+    "normalize.css": "7.0.0",
     "redux": "3.7.2",
     "redux-thunk": "2.2.0"
   },
@@ -18,10 +19,8 @@
     "test": "inferno-scripts test --env=jsdom",
     "eject": "inferno-scripts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "deploy:s3":
-      "npm run build-css && npm run build && aws s3 sync build/ s3://stuffoncats --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "deploy:s3": "npm run build-css && npm run build && aws s3 sync build/ s3://stuffoncats --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
   },
   "devDependencies": {
     "node-sass-chokidar": "0.0.3"
