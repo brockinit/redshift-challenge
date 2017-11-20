@@ -1,6 +1,6 @@
 import { fetchService } from '../utils';
 const { INFERNO_APP_IMGUR_API_ENDPOINT } = process.env;
-const IMAGE_LIMIT = 9;
+const IMAGE_LIMIT = 6;
 
 export const GET_IMAGES = 'images/GET_IMAGES';
 export const GET_IMAGES_SUCCESS = 'images/GET_IMAGES_SUCCESS';
