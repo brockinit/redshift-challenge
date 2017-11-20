@@ -10,6 +10,9 @@ http://stuffoncats.s3-website-us-west-2.amazonaws.com/
 -  `npm install`
 - `npm start`
 
+## Running Tests
+- `npm test`
+
 ## Deployment
 -  Be sure that you have configured your `~/.aws/credentials` file properly
 - `npm run deploy:s3`

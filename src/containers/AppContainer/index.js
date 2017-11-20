@@ -1,5 +1,4 @@
 import Component from 'inferno-component';
-import './AppContainer.css';
 import { GalleryContainer } from '../';
 import { NavBar, Footer } from '../../components';
 
