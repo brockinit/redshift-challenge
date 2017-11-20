@@ -7,7 +7,6 @@ const ImageCard = props => {
       >
         <div className="grid-hover" />
       </div>
-      <div>hello</div>
     </div>
   );
 };
