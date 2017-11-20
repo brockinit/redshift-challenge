@@ -19,7 +19,9 @@
     "eject": "inferno-scripts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css":
-      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "deploy:s3":
+      "npm run build-css && npm run build && aws s3 sync build/ s3://stuffoncats --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
   },
   "devDependencies": {
     "node-sass-chokidar": "0.0.3"
