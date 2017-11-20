@@ -2,7 +2,6 @@ import { fetchService } from '../utils';
 const { INFERNO_APP_IMGUR_API_ENDPOINT } = process.env;
 const IMAGE_LIMIT = 12;
 
-// ACTION TYPES
 export const GET_IMAGES = 'images/GET_IMAGES';
 export const GET_IMAGES_SUCCESS = 'images/GET_IMAGES_SUCCESS';
 export const GET_IMAGES_FAILURE = 'images/GET_IMAGES_FAILURE';
@@ -10,13 +9,11 @@ export const GET_IMAGES_FAILURE = 'images/GET_IMAGES_FAILURE';
 export const SHOW_MORE_IMAGES = 'images/SHOW_MORE_IMAGES';
 export const INCREMENT_PAGE = 'images/INCREMENT_PAGE';
 
-// INITIAL STATE
 const initialState = {
   items: [],
   currentPage: 0,
 };
 
-// ASYNC ACTIONS
 export const getImages = () => {
   return {
     type: GET_IMAGES,
@@ -29,7 +26,6 @@ export const incrementPage = () => {
   };
 };
 
-// ACTIONS
 export const fetchImages = () => {
   return function(dispatch, getState) {
     const imageState = getState().images;
@@ -45,12 +41,11 @@ export const fetchImages = () => {
       })
       .catch(err => {
         dispatch({ type: GET_IMAGES_FAILURE });
-        throw err;
+        throw new Error(err.message);
       });
   };
 };
 
-// REDUCERS
 function reducer(state = initialState, action = {}) {
   switch (action.type) {
     case GET_IMAGES_SUCCESS:
