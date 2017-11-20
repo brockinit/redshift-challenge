@@ -22,6 +22,7 @@
     "deploy:s3": "npm run build-css && npm run build && aws s3 sync build/ s3://stuffoncats --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
   },
   "devDependencies": {
+    "inferno-test-utils": "3.10.1",
     "node-sass-chokidar": "0.0.3"
   }
 }

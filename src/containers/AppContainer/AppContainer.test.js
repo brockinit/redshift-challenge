@@ -1,7 +1,7 @@
-import { render } from 'inferno';
+import { isClassVNode } from 'inferno-test-utils';
 import AppContainer from './';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  render(<AppContainer />, div);
+test('AppContainer should be a class component', () => {
+  const isClass = isClassVNode(<AppContainer />);
+  expect(isClass).toBe(true);
 });

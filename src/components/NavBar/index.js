@@ -1,19 +1,18 @@
 import HamburgerSVG from '../../assets/hamburger.svg';
-import { Link } from 'inferno-router';
 
 const NavBar = () => {
   return (
     <div className="navbar-container">
       <div className="name-container">
-        <Link to="/">
+        <a href>
           <p>Stuff on Cats</p>
-        </Link>
+        </a>
       </div>
       <div className="menu-item-container">
         <div className="menu-item">
-          <Link to="https://www.reddit.com/r/StuffOnCats/">
+          <a href="https://www.reddit.com/r/StuffOnCats/">
             <p>Inspired by r/StuffOnCats</p>
-          </Link>
+          </a>
         </div>
       </div>
       <div className="hamburger">
